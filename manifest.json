@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
-  "name": "ffmpeg.wasm chrome extension",
+  "manifest_version": 3,
+  "name": "SFMC AutoStopJourney App",
   "version": "1.0.0",
-  "description": "An example to use ffmpeg.wasm in Chrome Extension",
+  "description": "An custom app by Dai Phan who want to stop journeys fast",
   "icons": {
     "16": "assets/icon16.png",
     "48": "assets/icon48.png",
     "128": "assets/icon128.png"
   },
-  "author": "Jerome Wu <jeromewus@gmail.com>",
+  "author": "Dai Phan <daiphan308@gmail.com>",
   "permissions": [
     "declarativeContent",
     "activeTab"
@@ -17,25 +17,12 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "page_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/icon16.png",
       "48": "assets/icon48.png",
       "128": "assets/icon128.png"
     }
-  },
-  "web_accessible_resources": [
-    "assets/video.flv",
-    "assets/spinner.gif",
-    "vendor/ffmpeg-core.js",
-    "vendor/ffmpeg-core.wasm",
-    "vendor/ffmpeg-core.worker.js"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["vendor/ffmpeg.min.js", "vendor/ffmpeg-core.js", "transcode.js"]
-    }
-  ]
+  }
 }
